@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto Energia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>
+        /* Efeito de fade-in ao carregar a página */
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Efeito de hover para botões */
+        .btn-hover:hover {
+            background-color: #fbbf24;
+            transform: scale(1.05);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Efeito de hover nos cards */
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Adicionando uma borda e sombra ao rodapé */
+        footer {
+            border-top: 2px solid #fbbf24;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-indigo-900 via-blue-800 to-blue-500">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-yellow-400">Posto Energia</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#services" class="hover:text-yellow-400">Serviços</a></li>
+                <li><a href="#about" class="hover:text-yellow-400">Sobre</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400">Contato</a></li>
+            </ul>
+            <!-- Menu Mobile -->
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile (Escondido inicialmente) -->
+    <div class="md:hidden" id="mobile-menu" class="hidden">
+        <ul class="bg-blue-900 text-white space-y-4 py-4 text-center">
+            <li><a href="#services" class="block hover:text-yellow-400">Serviços</a></li>
+            <li><a href="#about" class="block hover:text-yellow-400">Sobre</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-400">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-96 flex items-center justify-center text-center text-white fade-in"
+        style="background-image: url('https://source.unsplash.com/1600x900/?gas-station');">
+        <h1 class="text-5xl font-bold text-shadow-lg text-yellow-400">Bem-vindo ao Posto Energia</h1>
+        <p class="mt-4 text-xl text-yellow-300">Combustível de qualidade e atendimento eficiente!</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 text-center bg-indigo-800" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-8">Nossos Serviços</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6" data-aos="fade-up">
+            <div class="card-hover bg-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-900">Abastecimento</h3>
+                <p class="text-lg text-gray-700">Oferecemos combustíveis de alta qualidade para seu veículo.</p>
+            </div>
+            <div class="card-hover bg-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-900">Loja de Conveniência</h3>
+                <p class="text-lg text-gray-700">Aqui você encontra produtos e lanches rápidos.</p>
+            </div>
+            <div class="card-hover bg-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-900">Troca de Óleo</h3>
+                <p class="text-lg text-gray-700">Serviço especializado para a manutenção do seu veículo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-indigo-900 py-20 text-white" data-aos="fade-up">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-yellow-400 mb-8">Sobre o Posto Energia</h2>
+            <p class="text-lg max-w-2xl mx-auto">
+                O Posto Energia oferece combustível de alta qualidade e um atendimento excepcional. Nossa missão é
+                garantir a sua satisfação com serviços rápidos e eficientes, além de uma loja de conveniência completa
+                para sua conveniência.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contact" class="py-20 text-center bg-yellow-400" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-blue-900 mb-8">Entre em Contato</h2>
+        <div class="container mx-auto">
+            <form action="#" method="POST" class="max-w-xl mx-auto space-y-6">
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label for="name" class="block text-lg text-blue-900">Nome</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="w-1/2">
+                        <label for="email" class="block text-lg text-blue-900">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-lg text-blue-900">Mensagem</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit"
+                    class="btn-hover px-6 py-3 bg-blue-600 text-white font-semibold rounded-md w-full">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-900 text-white py-8 text-center">
+        <p>&copy; 2024 Posto Energia | Todos os direitos reservados</p>
+        <p>Desenvolvido com ❤️ e Tailwind CSS</p>
+        <div class="mt-4">
+            <a href="#" class="text-yellow-400 mx-2">Facebook</a>
+            <a href="#" class="text-yellow-400 mx-2">Instagram</a>
+            <a href="#" class="text-yellow-400 mx-2">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializando o AOS (Animate On Scroll) para animações ao rolar a página
+        AOS.init({
+            duration: 1000, // duração da animação
+            easing: 'ease-in-out', // tipo de transição
+            once: true, // animação ocorre apenas uma vez
+        });
+
+        // Função para abrir e fechar o menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
